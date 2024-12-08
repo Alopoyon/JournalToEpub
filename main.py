@@ -1,1 +1,3 @@
-print("Hi")
+import pdfplumber
+
+print(dir(pdfplumber))
