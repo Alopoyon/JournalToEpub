@@ -8,12 +8,12 @@ with open(PATH, 'rb') as pdf_file:
     # print(f"{read_pdf.pages=} {number_of_pages=}")
 
     try:
-        pypdf_test = ""
+        pypdf_test = {}
         for page_number in range(number_of_pages): 
             page = read_pdf.pages[page_number]
             page_content = page.extract_text()
             sanitised_page_content = page_content.encode('ascii', 'replace').decode('ascii')
-            pypdf_test += sanitised_page_content
+            pypdf_test[page_number] = sanitised_page_content
 
         print(pypdf_test)
 
